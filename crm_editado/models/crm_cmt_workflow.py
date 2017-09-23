@@ -5,8 +5,7 @@ from odoo import api, fields, models
 class x_crm(models.Model):
     _inherit = 'crm.lead'
 
-    x_cmt_cuestionariolleno = fields.Boolean(
-        string=u'Cuestionario lleno', onchange="1")
+    
 
     @api.depends('order_ids')
     @api.one
@@ -23,10 +22,10 @@ class x_crm(models.Model):
             pass
         if self.sale_number != 0 and (str(self.stage_id) == 'crm.stage(1,)'):
             self.write({'stage_id': 3})"""
-        if self.x_cmt_cuestionariolleno:
+        """if self.x_cmt_cuestionariolleno:
             self.write({'stage_id': 7})
         else:
-            self.write({'stage_id': 1})
+            self.write({'stage_id': 1})"""
         # volvemos a asignar para corregir el error que sale al comentar la línea "return res"
         self.sale_number = self.sale_number
         # return res

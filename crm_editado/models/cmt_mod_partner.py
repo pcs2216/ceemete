@@ -6,5 +6,6 @@ class x_cmt_partner(models.Model):
     _inherit = 'res.partner'
 
     x_cmt_validarListaPrecios = fields.Boolean(
-        string=u'Validar lista de precios',
-    )
+        string=u'Validar lista de precios')
+    x_cmt_validarCuestionario = fields.Boolean(
+        string=u'Validar Cuestionario')
