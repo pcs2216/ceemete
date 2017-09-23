@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="director_general_cmt" model="res.groups">
+            <field name="name">Director_general</field>
+        </record>
+        <record id="x_cmt_partner" model="ir.ui.view">
+            <field name="name">partner.modified.view</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <field name='lang' position="after">
+                    <field name="x_cmt_validarListaPrecios" groups="crm_editado.director_general_cmt"></field>
+                </field>
+                <!--xpath expr="//div[@name='button_box']/button/div/field[@name='meeting_count']" position="after"><field name="x_status_number" /></xpath-->
+            </field>
+        </record>
+    </data>
+</odoo>
