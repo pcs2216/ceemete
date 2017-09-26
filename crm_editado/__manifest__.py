@@ -24,7 +24,7 @@
     'data': [
         'views/vista_crm.xml',
         'views/vista_partner.xml',
-        
+        'views/vista_saleOrder.xml'
         #'views/views.xml',
         # 'views/templates.xml',
     ],

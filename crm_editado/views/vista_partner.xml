@@ -9,12 +9,9 @@
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
-                <field name='lang' position="after">
-                    <group string="Validar">
-                        <field name="x_cmt_validarListaPrecios" groups="crm_editado.director_general_cmt"></field>
-                        <field string="Validar perfil" name="x_cmt_validarCuestionario" groups="crm_editado.director_general_cmt" attrs="{'invisible': [('x_cmt_cualessuactividadprincipal','not in',(60,70,80))]}"></field>
-                    </group>
-                </field>
+                <xpath expr="//field[@name='category_id']" position="after">
+                    <field string="Perfil validado" name="x_cmt_validarCuestionario" groups="crm_editado.director_general_cmt" attrs="{'invisible': [('x_cmt_cualessuactividadprincipal','not in',(60,70,80))]}"></field>
+                </xpath>                
                 <!--xpath expr="//div[@name='button_box']/button/div/field[@name='meeting_count']" position="after"><field name="x_status_number" /></xpath-->
             </field>
         </record>
