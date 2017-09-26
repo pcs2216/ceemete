@@ -18,5 +18,18 @@
                 <!--xpath expr="//div[@name='button_box']/button/div/field[@name='meeting_count']" position="after"><field name="x_status_number" /></xpath-->
             </field>
         </record>
+        <record id="x_cmt_partner_tree" model="ir.ui.view">
+            <field name="name">partner.modified.view.tree</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='display_name']" position="after">
+                    <field name="x_cmt_validarListaPrecios"></field>
+                </xpath>
+                <xpath expr="//tree/field[@name='display_name']" position="after">
+                    <field name="x_perfilconfirmado"></field>
+                </xpath>
+            </field>
+        </record>
     </data>
 </odoo>

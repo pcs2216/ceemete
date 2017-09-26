@@ -4,15 +4,14 @@ from odoo import api, fields, models
 
 class x_crm(models.Model):
     _inherit = 'crm.lead'
-
     
-
+   
     @api.depends('order_ids')
     @api.one
     def _compute_sale_amount_total(self):  # nombre de la funcion heredada
         # un print para que se muestre en la consola, Si se muestra entonces is esta compilando esta parte del codigo
         print '********GBM*****************'
-        #print self.stage_id.name
+        # print self.stage_id.name
         # llamamos a la función padre para que ejecute su código original
         super(x_crm, self)._compute_sale_amount_total()
         # agregamos nuestro código
