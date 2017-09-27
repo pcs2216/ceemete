@@ -6,7 +6,10 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//button[@name='action_confirm']" position="attributes">
+                <xpath expr="//button[@name='action_confirm'][1]" position="attributes">
+                    <attribute name="groups">crm_editado.director_general_cmt</attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_confirm'][2]" position="attributes">
                     <attribute name="groups">crm_editado.director_general_cmt</attribute>
                 </xpath>
             </field>

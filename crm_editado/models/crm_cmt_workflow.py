@@ -16,15 +16,15 @@ class x_crm(models.Model):
         super(x_crm, self)._compute_sale_amount_total()
         # agregamos nuestro código
         # asignamos para evitar error de asignacióny poder hacer estavariable dentro de nuestro código
-        """self.sale_number = self.sale_number
+        self.sale_number = self.sale_number
+        """
         if self.stage_id.name:
             pass
         if self.sale_number != 0 and (str(self.stage_id) == 'crm.stage(1,)'):
             self.write({'stage_id': 3})"""
-        """if self.x_cmt_cuestionariolleno:
-            self.write({'stage_id': 7})
-        else:
-            self.write({'stage_id': 1})"""
+        if self.sale_number != 0 and (str(self.stage_id) == 'crm.stage(1,)'):
+            self.write({'stage_id': 8})
+        
         # volvemos a asignar para corregir el error que sale al comentar la línea "return res"
         self.sale_number = self.sale_number
         # return res

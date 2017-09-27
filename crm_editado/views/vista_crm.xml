@@ -7,10 +7,10 @@
             <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
             <field name="arch" type="xml">
                 <field name='stage_id' position="attributes">
-                    <attribute name="clickable">"False"</attribute>
+                    <attribute name="clickable">False</attribute>
                 </field>
                 <field name='partner_id' position="after">
-                    <field name="x_cmt_statuscliente" string="Status cliente" invisible="1"></field>
+                    <field name="x_cmt_perfilcliente" string="Perfil cliente" ></field>
                 </field>
                 <!--xpath expr="//div[@name='button_box']/button/div/field[@name='meeting_count']" position="after"><field name="x_status_number" /></xpath-->
             </field>
@@ -23,11 +23,9 @@
                 <field name='name' position="before">
                     <field name="sale_number" invisible="1"></field>
                 </field>
-                <xpath expr="//templates//field[@name='priority']" position="before">
-                    <p>Validado: </p>
-                    <field display="full" name="x_cmt_statuscliente" string="Validado"></field>
+                <xpath expr="//templates//field[@name='priority']/.." position="before">
+                    <field display="full" name="x_cmt_validacion"></field>
                 </xpath>
-                
             </field>
         </record>
     </data>
