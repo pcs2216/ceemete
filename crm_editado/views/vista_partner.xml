@@ -10,7 +10,8 @@
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='category_id']" position="after">
-                    <field string="Perfil validado" name="x_cmt_validarCuestionario" groups="crm_editado.director_general_cmt" attrs="{'invisible': [('x_cmt_cualessuactividadprincipal','not in',(60,70,80))]}"></field>
+                    <field string="Perfil sospechoso" name="x_cmt_validarSospechoso" groups="crm_editado.director_general_cmt" attrs="{'invisible': [('x_cmt_cualessuactividadprincipal','not in',(60,70,80))]}"></field>
+                    <field string="Perfil validado" name="x_cmt_validarPerfil" groups="crm_editado.director_general_cmt" attrs="{'invisible': ['|',('x_cmt_cualessuactividadprincipal','not in',(60,70,80)),('x_cmt_validarSospechoso','=',True)]}"></field>
                 </xpath>                
                 <!--xpath expr="//div[@name='button_box']/button/div/field[@name='meeting_count']" position="after"><field name="x_status_number" /></xpath-->
             </field>
@@ -21,7 +22,7 @@
             <field name="inherit_id" ref="base.view_partner_tree"/>
             <field name="arch" type="xml">
                 <xpath expr="//tree/field[@name='display_name']" position="after">
-                    <field name="x_cmt_validarListaPrecios"></field>
+                    <field name="x_cmt_validarPerfil"></field>
                 </xpath>
                 <xpath expr="//tree/field[@name='display_name']" position="after">
                     <field name="x_perfilconfirmado"></field>
