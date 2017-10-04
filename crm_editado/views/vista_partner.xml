@@ -13,8 +13,8 @@
                     <field string="Perfil sospechoso" name="x_cmt_validarSospechoso" groups="crm_editado.director_general_cmt" attrs="{'invisible': [('x_cmt_cualessuactividadprincipal','not in',(60,70,80))]}"></field>
                     <field string="Perfil validado" name="x_cmt_validarPerfil" groups="crm_editado.director_general_cmt" attrs="{'invisible': ['|',('x_cmt_cualessuactividadprincipal','not in',(60,70,80)),('x_cmt_validarSospechoso','=',True)]}"></field>
                 </xpath>
-                <xpath expr="//page//field[@name='customer']" position="after">
-                    <field name="name" />
+                <xpath expr="//page/group/group/field[@name='customer']" position="after">
+                    <field name="property_product_pricelist" attrs="{'readonly': 1}" />
                 </xpath>
             </field>
         </record>

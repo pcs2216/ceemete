@@ -21,13 +21,17 @@
                     <field name="sale_number" invisible="1"></field>
                 </field>
                 <xpath expr="//templates//field[@name='priority']/.." position="before">
-                    <p>
+                    <field  name="x_cmt_tipoCliente" ></field>
+                </xpath>
+                <xpath expr="//templates//field[@name='priority']/.." position="before">
+                    <div>
                         <field name="x_cmt_validacion"></field>
-                    </p>
+                    </div>
                 </xpath>
                 <xpath expr="//templates//field[@name='priority']/.." position="before">
                     <field name="x_cmt_sospechoso"></field>
                 </xpath>
+                
             </field>
         </record>
     </data>
