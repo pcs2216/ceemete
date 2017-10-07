@@ -18,7 +18,6 @@ class x_crm(models.Model):
         for record in self:
             if record.partner_id.x_cmt_validarPerfil:
                 record.x_cmt_validacion = 'Perfil Validado'
-            else:
-                record.x_cmt_validacion = 'Perfil NO Validado'
+            
             if record.partner_id.x_cmt_validarSospechoso:
                 record.x_cmt_sospechoso = 'Perfil Sospechoso'
