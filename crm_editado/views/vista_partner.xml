@@ -9,11 +9,15 @@
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='category_id']" position="after">
-                    <field string="Perfil sospechoso" name="x_cmt_validarSospechoso" groups="crm_editado.director_general_cmt" attrs="{'invisible': [('x_cmt_cualessuactividadprincipal','not in',(60,70,80))]}"></field>
-                    <field string="Perfil validado" name="x_cmt_validarPerfil" groups="crm_editado.director_general_cmt" attrs="{'invisible': ['|',('x_cmt_cualessuactividadprincipal','not in',(60,70,80)),('x_cmt_validarSospechoso','=',True)]}"></field>
+                <xpath expr="//field[@name='website']" position="after">
+                    <field string="Validar Website" name="x_cmt_validarWebsite"></field>
                 </xpath>
-                
+                <xpath expr="//field[@name='category_id']" position="after">
+                    <field string="Perfil validado" name="x_cmt_validarPerfil" groups="crm_editado.director_general_cmt" attrs="{'invisible': [('x_perfilconfirmado','not in',('Distribuidor','Fabricante'))]}"></field>
+                </xpath>
+                <xpath expr="//button[@name='toggle_active']" position="attributes">
+                    <attribute name="groups">crm_editado.director_general_cmt</attribute>
+                </xpath>
             </field>
         </record>
         <record id="x_cmt_partner_tree" model="ir.ui.view">
