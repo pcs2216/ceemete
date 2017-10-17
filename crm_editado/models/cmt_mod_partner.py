@@ -5,6 +5,8 @@ from odoo import api, fields, models
 class x_cmt_partner(models.Model):
     _inherit = 'res.partner'
 
+    x_cmt_nombreComercial = fields.Char(
+        string='Nombre Comercial')
     x_cmt_validarWebsite = fields.Boolean(
         string='Validar website')
     x_cmt_validarPerfil = fields.Boolean(

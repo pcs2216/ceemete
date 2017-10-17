@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="x_cmt_partner_corrigiendo" model="ir.ui.view">
+            <field name="name">partner.modified.view_form_corrigiendo</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='category_id']" position="after">
+                    
+                        <field name="x_cmt_medioseentero"></field>
+                        <field name="x_cmt_eventoseentero" attrs="{'invisible':[('x_cmt_medioseentero','!=',5)]}"></field>
+                        <field name="x_cmt_otromedio" attrs="{'invisible':[('x_cmt_medioseentero', '!=',6)]}"></field>
+                        <field name="x_cmt_prospeccion" attrs="{'invisible':[('x_cmt_medioseentero', '!=',1)]}"></field>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

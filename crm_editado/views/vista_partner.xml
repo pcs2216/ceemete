@@ -18,6 +18,9 @@
                 <xpath expr="//button[@name='toggle_active']" position="attributes">
                     <attribute name="groups">crm_editado.director_general_cmt</attribute>
                 </xpath>
+                <xpath expr="//field[@name='parent_id']/.." position="before">
+                    <field name="x_cmt_nombreComercial" placeholder="Nombre Comercial"></field>
+                </xpath>
             </field>
         </record>
         <record id="x_cmt_partner_tree" model="ir.ui.view">
