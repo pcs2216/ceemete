@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="x_cmt_encuesta_corrigiendo" model="ir.ui.view">
+            <field name="name">partner.modified.view_form_encuesta</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="studio_customization.odoo_studio_res_part_938a2c0a-cc8d-4938-a3d7-f81f05f1a0be"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='x_cmt_tipodedistribuidor']" position="after">
+                    <field name="x_cmt_nivelVendeProductos" attrs="{ 'invisible':[('x_cmt_cualessuactividadprincipal','not in',[70,10])] }" />
+                </xpath>
+                <xpath expr="//field[@name='x_perfilconfirmado']" position="after">
+                    <field name="x_cmt_compitePor" />
+                    <!--field name="x_cmt_prospeccion" attrs="{'invisible':[('x_cmt_medioseentero', '!=',1)]}"></field-->
+                </xpath>
+                <xpath expr="//field[@name='x_cmt_medioseentero']" position="after">
+                    
+                    <field name="x_cmt_prospeccion" attrs="{'invisible':[('x_cmt_medioseentero', '!=',1)]}"></field>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -25,7 +25,8 @@
         'views/vista_crm.xml',
         'views/vista_partner.xml',
         'views/vista_saleOrder.xml',
-        'views/vista_partner_corrigiendo.xml',
+        'views/vista_encuesta.xml'
+        #'views/vista_partner_corrigiendo.xml',
         #'views/views.xml',
         # 'views/templates.xml',
     ],
