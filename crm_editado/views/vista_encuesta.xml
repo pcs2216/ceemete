@@ -14,7 +14,6 @@
                     <!--field name="x_cmt_prospeccion" attrs="{'invisible':[('x_cmt_medioseentero', '!=',1)]}"></field-->
                 </xpath>
                 <xpath expr="//field[@name='x_cmt_medioseentero']" position="after">
-                    
                     <field name="x_cmt_prospeccion" attrs="{'invisible':[('x_cmt_medioseentero', '!=',1)]}"></field>
                 </xpath>
             </field>

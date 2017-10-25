@@ -5,6 +5,11 @@ from odoo import api, fields, models
 class x_cmt_partner_encuesta(models.Model):
     _inherit = 'res.partner'
 
+    x_cmt_medioseentero = fields.Selection(
+        string='Medio por el cual se enteró de nosotros',
+        selection=[(1, 'Prospección'), (2, 'Referido'),
+                   (3, 'Mailing/Social Media'), (5, 'Evento'), (6, 'Otro')]
+    )
     x_cmt_compitePor = fields.Selection(
         string='Compite por : ',
         selection=[(1, 'Precio'), (2, 'Servicio'),
