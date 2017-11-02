@@ -18,14 +18,13 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','sale_crm'],
+    'depends': ['base', 'sale_crm'],
 
     # always loaded
     'data': [
-        'views/vista_crm.xml',
+
         'views/vista_partner.xml',
-        'views/vista_saleOrder.xml',
-        'views/vista_encuesta.xml',
+
         #'views/vista_reunion.xml',
         #'views/vista_partner_corrigiendo.xml',
         #'views/views.xml',

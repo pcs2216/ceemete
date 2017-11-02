@@ -16,6 +16,9 @@
                 <xpath expr="//field[@name='x_cmt_medioseentero']" position="after">
                     <field name="x_cmt_prospeccion" attrs="{'invisible':[('x_cmt_medioseentero', '!=',1)]}"></field>
                 </xpath>
+                <xpath expr="//field[@name='x_cmt_seespecializaenalimentaria']" position="after">
+                    <field name="x_tipoDeClientesAtiendes" attrs="{'invisible':[('x_cmt_cualessuactividadprincipal', 'not in',[30,20])]}"></field>
+                </xpath>
             </field>
         </record>
     </data>
