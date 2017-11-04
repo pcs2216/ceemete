@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "CRM Test1",
+    'name': "Ranking para Cliente",
 
-    'summary': """Modificaciones del  CRM""",
+    'summary': """Asignar Ranking a clientes""",
 
     'description': """
-        modificando crm
+        Asignar una calificación a los clientes basados en el promedio de ventas por año
     """,
 
     'author': "soluciones4g",
@@ -24,7 +24,9 @@
     'data': [
 
         'views/vista_partner.xml',
-
+        'views/vista_ranking.xml',
+        'security/ir.model.access.csv',
+        'data/data_ranking.xml',
         #'views/vista_reunion.xml',
         #'views/vista_partner_corrigiendo.xml',
         #'views/views.xml',

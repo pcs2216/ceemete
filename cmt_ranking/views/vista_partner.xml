@@ -1,43 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-        <record id="director_general_cmt" model="res.groups">
-            <field name="name">Director_general</field>
-        </record>
-        <record id="x_cmt_partner" model="ir.ui.view">
-            <field name="name">partner.modified.view</field>
+        
+        <record id="x_cmt_partner_ranking" model="ir.ui.view">
+            <field name="name">partner.modified.view_ranking</field>
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
-            <field name="arch" type="xml">
-                <xpath expr="//field[@name='website']" position="after">
-                    <field string="Validar Website" name="x_cmt_validarWebsite"></field>
-                </xpath>
-                <xpath expr="//field[@name='category_id']" position="after">
-                    <field string="Perfil validado" name="x_cmt_validarPerfil" groups="crm_editado.director_general_cmt" attrs="{'invisible': [('x_perfilconfirmado','not in',('Distribuidor','Fabricante'))]}"></field>
-                </xpath>
-                <xpath expr="//button[@name='toggle_active']" position="attributes">
-                    <attribute name="groups">crm_editado.director_general_cmt</attribute>
-                </xpath>
-                <xpath expr="//field[@name='parent_id']/.." position="before">
-                    <field name="x_cmt_nombreComercial" placeholder="Nombre Comercial"></field>
-                </xpath>
+            <field name="arch" type="xml">                
                 <xpath expr="//field[@name='lang']" position="after">
-                    <field name="x_cmt_tipoCliente"></field>
+                    <field name="x_cliente_ranking" invisible="1"></field>
+                    <field name="x_cmt_rankingCliente"></field>
                 </xpath>
             </field>
         </record>
-        <record id="x_cmt_partner_tree" model="ir.ui.view">
-            <field name="name">partner.modified.view.tree</field>
-            <field name="model">res.partner</field>
-            <field name="inherit_id" ref="base.view_partner_tree"/>
-            <field name="arch" type="xml">
-                <xpath expr="//tree/field[@name='display_name']" position="after">
-                    <field name="x_cmt_validarPerfil"></field>
-                </xpath>
-                <xpath expr="//tree/field[@name='display_name']" position="after">
-                    <field name="x_perfilconfirmado"></field>
-                </xpath>
-            </field>
-        </record>
+        
     </data>
 </odoo>

@@ -1,0 +1,5 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+prospeccion_director,Prospeccion director,crm_editado.model_x_model_prospeccion,crm_editado.director_general_cmt,1,1,1,1
+ranking_director,ranking director,model_cliente_ranking,crm_editado.director_general_cmt,1,1,1,1
+prospeccion_read_all,prospeccion all,crm_editado.model_x_model_prospeccion,,1,0,0,0
+ranking_read_all,ranking all,model_cliente_ranking,,1,0,0,0

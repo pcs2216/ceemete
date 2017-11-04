@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">        
+        <record id="x_montos_2" model="cliente.ranking">
+            <field name="x_name">Montos</field>
+            <field name="x_plata">10000</field>
+            <field name="x_oro">25000</field>
+            <field name="x_platino">50000</field>
+            
+            
+        </record>
+        
+    </data>
+</odoo>
