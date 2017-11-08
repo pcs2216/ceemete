@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-        
         <record id="x_cmt_partner_ranking" model="ir.ui.view">
             <field name="name">partner.modified.view_ranking</field>
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
-            <field name="arch" type="xml">                
+            <field name="arch" type="xml">
                 <xpath expr="//field[@name='lang']" position="after">
-                    <field name="x_cliente_ranking" invisible="1"></field>
+                    <field name="x_cliente_ranking"></field>
                     <field name="x_cmt_rankingCliente"></field>
+                    <field name="x_ultimaCompra"></field>
                 </xpath>
             </field>
         </record>
-        
     </data>
 </odoo>

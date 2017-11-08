@@ -27,6 +27,7 @@
         'views/vista_ranking.xml',
         'security/ir.model.access.csv',
         'data/data_ranking.xml',
+        'views/vista_calendar.xml',
         #'views/vista_reunion.xml',
         #'views/vista_partner_corrigiendo.xml',
         #'views/views.xml',

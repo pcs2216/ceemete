@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="x_cmt_calendar_llamdas" model="ir.ui.view">
+            <field name="name">vista_calendario_llamadas</field>
+            <field name="model">calendar.event</field>
+            <field name="inherit_id" ref="calendar.view_calendar_event_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='location']" position="after">
+                    <field name="x_esLlamada"></field>
+                    <field name="x_statusLlamada" attrs="{ 'invisible':[('x_esLlamada','=',False)] }"></field>
+                </xpath>
+                <xpath expr="//field[@name='description']" position="attributes">
+                    <attribute name="string">Notas</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
