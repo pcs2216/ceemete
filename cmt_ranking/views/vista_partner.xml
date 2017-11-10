@@ -7,7 +7,7 @@
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='lang']" position="after">
-                    <field name="x_cliente_ranking"></field>
+                    <field name="x_cliente_ranking" invisible="1"></field>
                     <field name="x_cmt_rankingCliente"></field>
                     <field name="x_ultimaCompra"></field>
                 </xpath>

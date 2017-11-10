@@ -7,12 +7,18 @@ class x_cmt_partner_totalinvoiced1(models.Model):
     
     
     x_ultimaCompra = fields.Date(
+        string='Última Compra', readonly=True, 
+        related='invoice_ids.date_invoice', 
+    )
+
+    """
+    x_ultimaCompra = fields.Date(
         string='Última Compra', readonly=True, compute='_compute_ultima_compra', 
         
         
-    )
+    )"""
    
-
+    """
     @api.one
     @api.depends('invoice_ids')
     def _compute_ultima_compra(self):
@@ -21,4 +27,4 @@ class x_cmt_partner_totalinvoiced1(models.Model):
                 rcrd['x_ultimaCompra'] = self.invoice_ids[0].date_invoice
             else :
                 rcrd['x_ultimaCompra'] = False
-            
+    """        
