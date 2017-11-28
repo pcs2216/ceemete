@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data >
+        <record model="ir.ui.view" id="calendar_graph_view">
+            <field name="name">vista_grafico_calendar</field>
+            <field name="model">calendar.event</field>
+            <field name="arch" type="xml">
+                <graph string="Participations by Courses">
+                    <field name="user_id"/>
+                </graph>
+            </field>
+        </record>
+        <record id="calendar.action_calendar_event" model="ir.actions.act_window">
+            <field name="name">Reuniones-Llamadas</field>
+            <field name="view_mode">calendar,tree,form,graph</field>
+        </record>
+    </data>
+</odoo>

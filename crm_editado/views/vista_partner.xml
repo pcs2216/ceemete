@@ -21,7 +21,9 @@
                 <xpath expr="//field[@name='parent_id']/.." position="before">
                     <field name="x_cmt_nombreComercial" placeholder="Nombre Comercial"></field>
                 </xpath>
-                
+                <xpath expr="//field[@name='lang']" position="after">
+                    <field string="Días sin comprar" name="x_duracion_23" readonly="1"></field>
+                </xpath>
             </field>
         </record>
         <record id="x_cmt_partner_tree" model="ir.ui.view">
@@ -34,6 +36,18 @@
                 </xpath>
                 <xpath expr="//tree/field[@name='display_name']" position="after">
                     <field name="x_perfilconfirmado"></field>
+                </xpath>
+            </field>
+        </record>
+        <record id="view_partner_inherit_search_2" model="ir.ui.view">
+            <field name="name">partner.search.expand.filter</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search" position="inside">
+                    
+                    <filter string="No han comprado en 3 meses" name="ultima_mas_de_3" domain="[('x_duracion_23', '&gt;', 10)]"/>
+                    <filter string="No han comprado en 6 meses" name="ultima_mas_de_6" domain="[('x_duracion_23', '&gt;', 180)]"/>
                 </xpath>
             </field>
         </record>

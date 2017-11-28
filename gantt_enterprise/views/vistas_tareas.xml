@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data >
+        <record id="x_tareas_inherit" model="ir.ui.view">
+            <field name="name">tareas.modified.view.form</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='date_deadline']" position="before">
+                    <field name="x_fechaInicio"></field>
+                    <!--field name="x_fechaFin"></field-->
+                    <field name="x_duracion" readonly="1" invisible="1" />
+                </xpath>
+                <!--xpath expr="//field[@name='date_deadline']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath-->
+            </field>
+        </record>
+        <record model="ir.ui.view" id="proyecto_gantt_view">
+            <field name="name">proyecto.gantt</field>
+            <field name="model">project.task</field>
+            <field name="arch" type="xml">
+                <gantt string="Tareas / Gantt" date_start="x_fechaInicio" date_delay="x_duracion" progress="progress" default_group_by='stage_id'>
+                    <field name="name"/>
+                </gantt>
+            </field>
+        </record>
+        <record id="project.act_project_project_2_project_task_all" model="ir.actions.act_window">
+            <field name="view_mode">kanban,tree,form,calendar,pivot,graph,gantt</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data >
+        <record id="x_calendar_inherit" model="ir.ui.view">
+            <field name="name">calendar.modified.view.tree</field>
+            <field name="model">calendar.event</field>
+            <field name="inherit_id" ref="calendar.view_calendar_event_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree//field[@name='stop']" position="after">
+                    <field name="x_esLlamada"></field>
+                    <field name="x_statusLlamada"></field>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
