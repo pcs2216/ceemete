@@ -46,7 +46,7 @@
             <field name="arch" type="xml">
                 <xpath expr="//search" position="inside">
                     
-                    <filter string="No han comprado en 3 meses" name="ultima_mas_de_3" domain="[('x_duracion_23', '&gt;', 10)]"/>
+                    <filter string="No han comprado en 3 meses" name="ultima_mas_de_3" domain="[('x_duracion_23', '&gt;', 90)]"/>
                     <filter string="No han comprado en 6 meses" name="ultima_mas_de_6" domain="[('x_duracion_23', '&gt;', 180)]"/>
                 </xpath>
             </field>
